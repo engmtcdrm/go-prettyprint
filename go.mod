@@ -3,7 +3,7 @@ module github.com/engmtcdrm/go-prettyprint
 go 1.23.0
 
 require (
-	github.com/engmtcdrm/go-ansi v1.0.0
+	github.com/engmtcdrm/go-ansi v0.1.0
 	github.com/stretchr/testify v1.9.0
 )
 
