@@ -81,16 +81,16 @@ import pp "github.com/engmtcdrm/go-prettyprint"
 ```go
 var (
     // IconComplete is the icon for a completed message.
-    IconComplete = "[✓] "
+    IconComplete = "[✓]"
 
     // IconAlert is the icon for an alerted message.
-    IconAlert = "[!] "
+    IconAlert = "[!]"
 
     // IconFailed is the icon for a failed message.
-    IconFailed = "[✗] "
+    IconFailed = "[✗]"
 
     // IconInfo is the icon for an informational message.
-    IconInfo = "[i] "
+    IconInfo = "[i]"
 )
 ```
 
