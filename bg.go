@@ -109,3 +109,61 @@ func WhiteBg(a ...any) string {
 func WhiteBgf(format string, a ...any) string {
 	return ansi.WhiteBg + fmt.Sprintf(format, a...) + ansi.Reset
 }
+
+// Bg8Bit formats using the default formats for its operands and returns the
+// resulting string with an 8-bit background color. Spaces are added between
+// operands when neither is a string.
+//
+// color must be between 0 and 255 otherwise no color will be applied.
+func Bg8Bit(color int, a ...any) string {
+	bgColor := ansi.Background8Bit(color)
+
+	if bgColor == "" {
+		return fmt.Sprint(a...)
+	}
+
+	return bgColor + fmt.Sprint(a...) + ansi.Reset
+}
+
+// Bg8Bitf formats according to a format specifier and returns the resulting
+// string with an 8-bit background color.
+//
+// color must be between 0 and 255 otherwise no color will be applied.
+func Bg8Bitf(color int, format string, a ...any) string {
+	bgColor := ansi.Background8Bit(color)
+
+	if bgColor == "" {
+		return fmt.Sprintf(format, a...)
+	}
+
+	return bgColor + fmt.Sprintf(format, a...) + ansi.Reset
+}
+
+// Bg24Bit formats using the default formats for its operands and returns the
+// resulting string with an 24-bit background color. Spaces are added between
+// operands when neither is a string.
+//
+// r, g, and b must be between 0 and 255 otherwise no color will be applied.
+func Bg24Bit(r int, g int, b int, a ...any) string {
+	bgColor := ansi.Background24Bit(r, g, b)
+
+	if bgColor == "" {
+		return fmt.Sprint(a...)
+	}
+
+	return bgColor + fmt.Sprint(a...) + ansi.Reset
+}
+
+// Bg24Bitf formats according to a format specifier and returns the resulting
+// string with an 24-bit background color.
+//
+// r, g, and b must be between 0 and 255 otherwise no color will be applied.
+func Bg24Bitf(r int, g int, b int, format string, a ...any) string {
+	bgColor := ansi.Background24Bit(r, g, b)
+
+	if bgColor == "" {
+		return fmt.Sprintf(format, a...)
+	}
+
+	return bgColor + fmt.Sprintf(format, a...) + ansi.Reset
+}
