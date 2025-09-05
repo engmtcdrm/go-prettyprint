@@ -109,3 +109,133 @@ func White(a ...any) string {
 func Whitef(format string, a ...any) string {
 	return ansi.White + fmt.Sprintf(format, a...) + ansi.Reset
 }
+
+// IntenseBlack formats using the default formats for its operands and returns the
+// resulting string with a intense black (gray) foreground. Spaces are added between
+// operands when neither is a string.
+func IntenseBlack(a ...any) string {
+	return ansi.IntenseBlack + fmt.Sprint(a...) + ansi.Reset
+}
+
+// IntenseBlackf formats according to a format specifier and returns the resulting
+// string with a intense black (gray) foreground.
+func IntenseBlackf(format string, a ...any) string {
+	return ansi.IntenseBlack + fmt.Sprintf(format, a...) + ansi.Reset
+}
+
+// IntenseRed formats using the default formats for its operands and returns the
+// resulting string with a intense red foreground. Spaces are added between
+// operands when neither is a string.
+func IntenseRed(a ...any) string {
+	return ansi.IntenseRed + fmt.Sprint(a...) + ansi.Reset
+}
+
+// IntenseRedf formats according to a format specifier and returns the resulting
+// string with a intense red foreground.
+func IntenseRedf(format string, a ...any) string {
+	return ansi.IntenseRed + fmt.Sprintf(format, a...) + ansi.Reset
+}
+
+// IntenseGreen formats using the default formats for its operands and returns the
+// resulting string with a intense green foreground. Spaces are added between
+// operands when neither is a string.
+func IntenseGreen(a ...any) string {
+	return ansi.IntenseGreen + fmt.Sprint(a...) + ansi.Reset
+}
+
+// IntenseGreenf formats according to a format specifier and returns the resulting
+// string with a intense green foreground.
+func IntenseGreenf(format string, a ...any) string {
+	return ansi.IntenseGreen + fmt.Sprintf(format, a...) + ansi.Reset
+}
+
+// IntenseYellow formats using the default formats for its operands and returns the
+// resulting string with a intense yellow foreground. Spaces are added between
+// operands when neither is a string.
+func IntenseYellow(a ...any) string {
+	return ansi.IntenseYellow + fmt.Sprint(a...) + ansi.Reset
+}
+
+// IntenseYellowf formats according to a format specifier and returns the resulting
+// string with a intense yellow foreground.
+func IntenseYellowf(format string, a ...any) string {
+	return ansi.IntenseYellow + fmt.Sprintf(format, a...) + ansi.Reset
+}
+
+// IntenseBlue formats using the default formats for its operands and returns the
+// resulting string with a intense blue foreground. Spaces are added between
+// operands when neither is a string.
+func IntenseBlue(a ...any) string {
+	return ansi.IntenseBlue + fmt.Sprint(a...) + ansi.Reset
+}
+
+// IntenseBluef formats according to a format specifier and returns the resulting
+// string with a intense blue foreground.
+func IntenseBluef(format string, a ...any) string {
+	return ansi.IntenseBlue + fmt.Sprintf(format, a...) + ansi.Reset
+}
+
+// IntenseMagenta formats using the default formats for its operands and returns the
+// resulting string with a intense magenta foreground. Spaces are added between
+// operands when neither is a string.
+func IntenseMagenta(a ...any) string {
+	return ansi.IntenseMagenta + fmt.Sprint(a...) + ansi.Reset
+}
+
+// IntenseMagentaf formats according to a format specifier and returns the resulting
+// string with a intense magenta foreground.
+func IntenseMagentaf(format string, a ...any) string {
+	return ansi.IntenseMagenta + fmt.Sprintf(format, a...) + ansi.Reset
+}
+
+// IntenseCyan formats using the default formats for its operands and returns the
+// resulting string with a intense cyan foreground. Spaces are added between
+// operands when neither is a string.
+func IntenseCyan(a ...any) string {
+	return ansi.IntenseCyan + fmt.Sprint(a...) + ansi.Reset
+}
+
+// IntenseCyanf formats according to a format specifier and returns the resulting
+// string with a intense cyan foreground.
+func IntenseCyanf(format string, a ...any) string {
+	return ansi.IntenseCyan + fmt.Sprintf(format, a...) + ansi.Reset
+}
+
+// IntenseWhite formats using the default formats for its operands and returns the
+// resulting string with a intense white foreground. Spaces are added between
+// operands when neither is a string.
+func IntenseWhite(a ...any) string {
+	return ansi.IntenseWhite + fmt.Sprint(a...) + ansi.Reset
+}
+
+// IntenseWhitef formats according to a format specifier and returns the resulting
+// string with a intense white foreground.
+func IntenseWhitef(format string, a ...any) string {
+	return ansi.IntenseWhite + fmt.Sprintf(format, a...) + ansi.Reset
+}
+
+// Foreground8Bit formats using the default formats for its operands and returns the
+// resulting string with a 8-bit foreground color. Spaces are added between
+// operands when neither is a string.
+func Foreground8Bit(color int, a ...any) string {
+	return ansi.Foreground8Bit(color) + fmt.Sprint(a...) + ansi.Reset
+}
+
+// Foreground8Bitf formats according to a format specifier and returns the resulting
+// string with a 8-bit foreground color.
+func Foreground8Bitf(color int, format string, a ...any) string {
+	return ansi.Foreground8Bit(color) + fmt.Sprintf(format, a...) + ansi.Reset
+}
+
+// Foreground24Bit formats using the default formats for its operands and returns the
+// resulting string with a 24-bit foreground color. Spaces are added between
+// operands when neither is a string.
+func Foreground24Bit(r, g, b int, a ...any) string {
+	return ansi.Foreground24Bit(r, g, b) + fmt.Sprint(a...) + ansi.Reset
+}
+
+// Foreground24Bitf formats according to a format specifier and returns the resulting
+// string with a 24-bit foreground color.
+func Foreground24Bitf(r, g, b int, format string, a ...any) string {
+	return ansi.Foreground24Bit(r, g, b) + fmt.Sprintf(format, a...) + ansi.Reset
+}
