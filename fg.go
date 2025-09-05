@@ -214,28 +214,60 @@ func IntenseWhitef(format string, a ...any) string {
 	return ansi.IntenseWhite + fmt.Sprintf(format, a...) + ansi.Reset
 }
 
-// Foreground8Bit formats using the default formats for its operands and returns the
-// resulting string with a 8-bit foreground color. Spaces are added between
+// Fg8Bit formats using the default formats for its operands and returns the
+// resulting string with an 8-bit foreground color. Spaces are added between
 // operands when neither is a string.
-func Foreground8Bit(color int, a ...any) string {
-	return ansi.Foreground8Bit(color) + fmt.Sprint(a...) + ansi.Reset
+//
+// color must be between 0 and 255 otherwise no color will be applied.
+func Fg8Bit(color int, a ...any) string {
+	fgColor := ansi.Foreground8Bit(color)
+
+	if fgColor == "" {
+		return fmt.Sprint(a...)
+	}
+
+	return fgColor + fmt.Sprint(a...) + ansi.Reset
 }
 
-// Foreground8Bitf formats according to a format specifier and returns the resulting
-// string with a 8-bit foreground color.
-func Foreground8Bitf(color int, format string, a ...any) string {
-	return ansi.Foreground8Bit(color) + fmt.Sprintf(format, a...) + ansi.Reset
+// Fg8Bitf formats according to a format specifier and returns the resulting
+// string with an 8-bit foreground color.
+//
+// color must be between 0 and 255 otherwise no color will be applied.
+func Fg8Bitf(color int, format string, a ...any) string {
+	fgColor := ansi.Foreground8Bit(color)
+
+	if fgColor == "" {
+		return fmt.Sprintf(format, a...)
+	}
+
+	return fgColor + fmt.Sprintf(format, a...) + ansi.Reset
 }
 
-// Foreground24Bit formats using the default formats for its operands and returns the
-// resulting string with a 24-bit foreground color. Spaces are added between
+// Fg24Bit formats using the default formats for its operands and returns the
+// resulting string with an 24-bit foreground color. Spaces are added between
 // operands when neither is a string.
-func Foreground24Bit(r, g, b int, a ...any) string {
-	return ansi.Foreground24Bit(r, g, b) + fmt.Sprint(a...) + ansi.Reset
+//
+// r, g, and b must be between 0 and 255 otherwise no color will be applied.
+func Fg24Bit(r int, g int, b int, a ...any) string {
+	fgColor := ansi.Foreground24Bit(r, g, b)
+
+	if fgColor == "" {
+		return fmt.Sprint(a...)
+	}
+
+	return fgColor + fmt.Sprint(a...) + ansi.Reset
 }
 
-// Foreground24Bitf formats according to a format specifier and returns the resulting
-// string with a 24-bit foreground color.
-func Foreground24Bitf(r, g, b int, format string, a ...any) string {
-	return ansi.Foreground24Bit(r, g, b) + fmt.Sprintf(format, a...) + ansi.Reset
+// Fg24Bitf formats according to a format specifier and returns the resulting
+// string with an 24-bit foreground color.
+//
+// r, g, and b must be between 0 and 255 otherwise no color will be applied.
+func Fg24Bitf(r int, g int, b int, format string, a ...any) string {
+	fgColor := ansi.Foreground24Bit(r, g, b)
+
+	if fgColor == "" {
+		return fmt.Sprintf(format, a...)
+	}
+
+	return fgColor + fmt.Sprintf(format, a...) + ansi.Reset
 }
