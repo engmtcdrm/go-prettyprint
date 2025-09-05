@@ -109,3 +109,165 @@ func WhiteBg(a ...any) string {
 func WhiteBgf(format string, a ...any) string {
 	return ansi.WhiteBg + fmt.Sprintf(format, a...) + ansi.Reset
 }
+
+// IntenseBlackBg formats using the default formats for its operands and returns the
+// resulting string with a intense black background. Spaces are added between
+// operands when neither is a string.
+func IntenseBlackBg(a ...any) string {
+	return ansi.IntenseBlackBg + fmt.Sprint(a...) + ansi.Reset
+}
+
+// IntenseBlackBgf formats according to a format specifier and returns the resulting
+// string with a intense black background.
+func IntenseBlackBgf(format string, a ...any) string {
+	return ansi.IntenseBlackBg + fmt.Sprintf(format, a...) + ansi.Reset
+}
+
+// IntenseRedBg formats using the default formats for its operands and returns the
+// resulting string with a intense red background. Spaces are added between
+// operands when neither is a string.
+func IntenseRedBg(a ...any) string {
+	return ansi.IntenseRedBg + fmt.Sprint(a...) + ansi.Reset
+}
+
+// IntenseRedBgf formats according to a format specifier and returns the resulting
+// string with a intense red background.
+func IntenseRedBgf(format string, a ...any) string {
+	return ansi.IntenseRedBg + fmt.Sprintf(format, a...) + ansi.Reset
+}
+
+// IntenseGreenBg formats using the default formats for its operands and returns the
+// resulting string with a intense green background. Spaces are added between
+// operands when neither is a string.
+func IntenseGreenBg(a ...any) string {
+	return ansi.IntenseGreenBg + fmt.Sprint(a...) + ansi.Reset
+}
+
+// IntenseGreenBgf formats according to a format specifier and returns the resulting
+// string with a intense green background.
+func IntenseGreenBgf(format string, a ...any) string {
+	return ansi.IntenseGreenBg + fmt.Sprintf(format, a...) + ansi.Reset
+}
+
+// IntenseYellowBg formats using the default formats for its operands and returns the
+// resulting string with a intense yellow background. Spaces are added between
+// operands when neither is a string.
+func IntenseYellowBg(a ...any) string {
+	return ansi.IntenseYellowBg + fmt.Sprint(a...) + ansi.Reset
+}
+
+// IntenseYellowBgf formats according to a format specifier and returns the resulting
+// string with a intense yellow background.
+func IntenseYellowBgf(format string, a ...any) string {
+	return ansi.IntenseYellowBg + fmt.Sprintf(format, a...) + ansi.Reset
+}
+
+// IntenseBlueBg formats using the default formats for its operands and returns the
+// resulting string with a intense blue background. Spaces are added between
+// operands when neither is a string.
+func IntenseBlueBg(a ...any) string {
+	return ansi.IntenseBlueBg + fmt.Sprint(a...) + ansi.Reset
+}
+
+// IntenseBlueBgf formats according to a format specifier and returns the resulting
+// string with a intense blue background.
+func IntenseBlueBgf(format string, a ...any) string {
+	return ansi.IntenseBlueBg + fmt.Sprintf(format, a...) + ansi.Reset
+}
+
+// IntenseMagentaBg formats using the default formats for its operands and returns the
+// resulting string with a intense magenta background. Spaces are added between
+// operands when neither is a string.
+func IntenseMagentaBg(a ...any) string {
+	return ansi.IntenseMagentaBg + fmt.Sprint(a...) + ansi.Reset
+}
+
+// IntenseMagentaBgf formats according to a format specifier and returns the resulting
+// string with a intense magenta background.
+func IntenseMagentaBgf(format string, a ...any) string {
+	return ansi.IntenseMagentaBg + fmt.Sprintf(format, a...) + ansi.Reset
+}
+
+// IntenseCyanBg formats using the default formats for its operands and returns the
+// resulting string with a intense cyan background. Spaces are added between
+// operands when neither is a string.
+func IntenseCyanBg(a ...any) string {
+	return ansi.IntenseCyanBg + fmt.Sprint(a...) + ansi.Reset
+}
+
+// IntenseCyanBgf formats according to a format specifier and returns the resulting
+// string with a intense cyan background.
+func IntenseCyanBgf(format string, a ...any) string {
+	return ansi.IntenseCyanBg + fmt.Sprintf(format, a...) + ansi.Reset
+}
+
+// IntenseWhiteBg formats using the default formats for its operands and returns the
+// resulting string with a intense white background. Spaces are added between
+// operands when neither is a string.
+func IntenseWhiteBg(a ...any) string {
+	return ansi.IntenseWhiteBg + fmt.Sprint(a...) + ansi.Reset
+}
+
+// IntenseWhiteBgf formats according to a format specifier and returns the resulting
+// string with a intense white background.
+func IntenseWhiteBgf(format string, a ...any) string {
+	return ansi.IntenseWhiteBg + fmt.Sprintf(format, a...) + ansi.Reset
+}
+
+// Bg8Bit formats using the default formats for its operands and returns the
+// resulting string with an 8-bit background color. Spaces are added between
+// operands when neither is a string.
+//
+// color must be between 0 and 255 otherwise no color will be applied.
+func Bg8Bit(color int, a ...any) string {
+	bgColor := ansi.Background8Bit(color)
+
+	if bgColor == "" {
+		return fmt.Sprint(a...)
+	}
+
+	return bgColor + fmt.Sprint(a...) + ansi.Reset
+}
+
+// Bg8Bitf formats according to a format specifier and returns the resulting
+// string with an 8-bit background color.
+//
+// color must be between 0 and 255 otherwise no color will be applied.
+func Bg8Bitf(color int, format string, a ...any) string {
+	bgColor := ansi.Background8Bit(color)
+
+	if bgColor == "" {
+		return fmt.Sprintf(format, a...)
+	}
+
+	return bgColor + fmt.Sprintf(format, a...) + ansi.Reset
+}
+
+// Bg24Bit formats using the default formats for its operands and returns the
+// resulting string with an 24-bit background color. Spaces are added between
+// operands when neither is a string.
+//
+// r, g, and b must be between 0 and 255 otherwise no color will be applied.
+func Bg24Bit(r int, g int, b int, a ...any) string {
+	bgColor := ansi.Background24Bit(r, g, b)
+
+	if bgColor == "" {
+		return fmt.Sprint(a...)
+	}
+
+	return bgColor + fmt.Sprint(a...) + ansi.Reset
+}
+
+// Bg24Bitf formats according to a format specifier and returns the resulting
+// string with an 24-bit background color.
+//
+// r, g, and b must be between 0 and 255 otherwise no color will be applied.
+func Bg24Bitf(r int, g int, b int, format string, a ...any) string {
+	bgColor := ansi.Background24Bit(r, g, b)
+
+	if bgColor == "" {
+		return fmt.Sprintf(format, a...)
+	}
+
+	return bgColor + fmt.Sprintf(format, a...) + ansi.Reset
+}
