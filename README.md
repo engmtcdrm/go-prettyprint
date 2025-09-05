@@ -4,10 +4,15 @@ The `prettyprint` package provides utilities for formatting strings with ANSI co
 
 Key Features:
 
-- Foreground Color Formatting: Wraps a string in the ANSI color and ANSI reset codes, i.e. `Cyan` and `Cyanf`.
-- Background Color Formatting: Wraps a string in the ANSI color and ANSI reset codes, i.e. `CyanBg` and `CyanBgf`.
-- Predefined Icons: These icons can be used in front of text to provide better readability when writing to console or a log file.
-- Helper functions for using predefined icons and color coding them to common colors, i.e. `Complete`, `Alert`, and `Fail`.
+- **Standard Color Formatting**: 8 basic foreground colors (`Black`, `Red`, `Green`, `Yellow`, `Blue`, `Magenta`, `Cyan`, `White`) and background colors (`BlackBg`, `RedBg`, etc.) with both variadic (`Red`) and formatted (`Redf`) versions.
+- **Intense/Bright Color Support**: High-intensity variants of all 8 colors for both foreground (`IntenseRed`, `IntenseGreen`, etc.) and background (`IntenseRedBg`, `IntenseGreenBg`, etc.) with formatted versions.
+- **8-bit Color Support**: Access to the full 256-color palette with `Fg8Bit`/`Bg8Bit` functions for precise color control (0-255 range).
+- **24-bit True Color Support**: Full RGB color support with `Fg24Bit`/`Bg24Bit` functions allowing any RGB combination (0-255 for each component).
+- **Text Formatting**: Style text with `Bold`, `Dim`, `Italic`, `Underline`, `DoubleUnderline`, `Strike`, and `Reverse` formatting, each with formatted versions.
+- **Advanced Formatting**: `Format` function to apply multiple formatting functions in sequence.
+- **Predefined Message Icons**: Pre-styled icons for common message types (`Complete` ✓, `Alert` !, `Fail` ✗, `Info` i) with automatic color coding.
+- **Variable Display Helpers**: Functions like `Var`, `VarSingleQuote`, and `VarDoubleQuote` for displaying variable names and values with consistent formatting.
+- **Input Validation**: All color functions validate input ranges and gracefully fall back to plain text for invalid values.
 
 ## Installation
 
