@@ -2,7 +2,6 @@ package prettyprint
 
 import (
 	"fmt"
-	"strings"
 
 	"github.com/engmtcdrm/go-ansi"
 )
@@ -101,12 +100,10 @@ func Format(msg string, a ...func(...any) string) string {
 		return msg
 	}
 
-	result := strings.Builder{}
-	result.WriteString(msg)
-
+	result := msg
 	for _, f := range a {
-		result.WriteString(f(result.String()))
+		result = f(result)
 	}
 
-	return result.String()
+	return result
 }
