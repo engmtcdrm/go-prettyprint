@@ -98,15 +98,12 @@ func TestFormat(t *testing.T) {
 
 	// Test with single formatting function
 	result = prettyprint.Format("test", prettyprint.Bold)
-	// Current implementation: "test" + Bold("test") = "test" + "\x1b[1mtest\x1b[0m"
-	expected := "test\x1b[1mtest\x1b[0m"
+	expected := "\x1b[1mtest\x1b[0m"
 	assert.Equal(t, expected, result)
 
 	// Test with multiple formatting functions
 	result = prettyprint.Format("test", prettyprint.Bold, prettyprint.Red)
-	// Current implementation appends each formatted result
-	assert.NotEmpty(t, result)
-	assert.Contains(t, result, "test")
-	assert.Contains(t, result, "\x1b[1m")  // Bold
-	assert.Contains(t, result, "\x1b[31m") // Red
+	// This should apply Bold first, then Red to the result
+	expected = "\x1b[31m\x1b[1mtest\x1b[0m\x1b[0m"
+	assert.Equal(t, expected, result)
 }
