@@ -1,9 +1,9 @@
 module github.com/engmtcdrm/go-prettyprint
 
-go 1.26.4
+go 1.26.5
 
 require (
-	github.com/engmtcdrm/go-ansi v1.0.2
+	github.com/engmtcdrm/go-ansi v1.1.0
 	github.com/stretchr/testify v1.11.1
 )
 
